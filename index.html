@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Discover luxury shopping, fashion, dining, cinema and exclusive experiences.">
+  <title>THE GRAND | Luxury Shopping Destination</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">
+    THE GRAND EXPERIENCE · DISCOVER SOMETHING EXTRAORDINARY
+    <a href="#offers">Explore offers →</a>
+  </div>
+
+  <header class="navbar">
+    <a class="logo" href="#home">THE <span>GRAND</span><small>LUXURY DESTINATION</small></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#directory">Directory</a>
+      <a href="#explore">Shopping</a>
+      <a href="#dining">Dining</a>
+      <a href="#entertainment">Entertainment</a>
+      <a href="#offers">Offers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="vipOpen" class="text-button">VIP Login</button>
+      <button id="cartOpen" class="cart-button">Bag <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <!-- Replace assets/mall-tour.mp4 with your licensed mall video.
+           The image poster remains visible if the video is unavailable. -->
+      <video class="hero-video" autoplay muted loop playsinline
+        poster="https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=2000&q=85">
+        <source src="assets/mall-tour.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <span class="eyebrow">SHOP · DINE · EXPERIENCE</span>
+        <h1>A world of<br><em>extraordinary.</em></h1>
+        <p>Discover iconic fashion, exceptional dining and unforgettable experiences, all in one destination.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-gold" href="#explore">Explore Collections</a>
+          <a class="btn btn-outline" href="#floor-map">Explore the Mall</a>
+        </div>
+        <div class="hero-note"><span class="live-dot"></span> YOUR NEXT GREAT EXPERIENCE STARTS HERE</div>
+      </div>
+      <div class="hero-index">01 / THE GRAND EXPERIENCE</div>
+    </section>
+
+    <section class="stats-bar">
+      <div><strong>100+</strong><span>Retail Experiences*</span></div>
+      <div><strong>3</strong><span>Shopping Levels</span></div>
+      <div><strong>20+</strong><span>Dining Experiences*</span></div>
+      <div><strong>∞</strong><span>Ways to Explore</span></div>
+      <p class="fine-print">*Illustrative figures for this website demo. Replace with verified mall information.</p>
+    </section>
+
+    <section class="section intro-section">
+      <div>
+        <span class="eyebrow">MORE THAN SHOPPING</span>
+        <h2>Your world.<br><em>Beautifully connected.</em></h2>
+      </div>
+      <p>From the season's most coveted looks to delicious discoveries and entertainment, experience everything you love in one remarkable place.</p>
+    </section>
+
+    <section class="section" id="directory">
+      <div class="section-heading">
+        <div><span class="eyebrow">FIND YOUR FAVOURITES</span><h2>The Mall <em>Directory</em></h2></div>
+        <p>Explore stores, discover brands and find your way around.</p>
+      </div>
+      <div class="directory-tools">
+        <input id="storeSearch" type="search" placeholder="Search brands, categories or shop numbers..." aria-label="Search mall directory">
+        <select id="floorFilter" aria-label="Filter by floor">
+          <option value="all">All Floors</option>
+          <option value="Ground">Ground Floor</option>
+          <option value="First">First Floor</option>
+          <option value="Second">Second Floor</option>
+        </select>
+      </div>
+      <div class="store-grid" id="storeGrid"></div>
+      <p class="fine-print">Brand names are illustrative directory examples, not a claim of official affiliation. Confirm actual tenants and store details before publishing.</p>
+    </section>
+
+    <section class="section floor-section" id="floor-map">
+      <div class="section-heading">
+        <div><span class="eyebrow">FIND YOUR WAY</span><h2>Explore every <em>floor.</em></h2></div>
+        <p>Choose a level to explore a sample interactive mall layout.</p>
+      </div>
+      <div class="floor-layout">
+        <div class="floor-tabs">
+          <button class="floor-tab active" data-floor="Ground">00 <span>Ground Floor</span></button>
+          <button class="floor-tab" data-floor="First">01 <span>First Floor</span></button>
+          <button class="floor-tab" data-floor="Second">02 <span>Second Floor</span></button>
+          <div class="map-legend"><span></span> Example destinations</div>
+        </div>
+        <div class="map-panel">
+          <div class="map-top"><span id="mapFloorTitle">GROUND FLOOR</span><span>INTERACTIVE DIRECTORY</span></div>
+          <div id="floorMap" class="floor-map"></div>
+          <p class="fine-print">Conceptual floor map only; it is not a surveyed or navigable 3D architectural model.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shopping-section" id="explore">
+      <div class="section-heading">
+        <div><span class="eyebrow">CURATED FOR YOU</span><h2>Discover the <em>collections.</em></h2></div>
+        <p>Find your next favourite piece across fashion, beauty and lifestyle.</p>
+      </div>
+      <div class="category-pills" id="categoryPills">
+        <button class="pill active" data-category="All">All</button>
+        <button class="pill" data-category="Ladies">Ladies</button>
+        <button class="pill" data-category="Gents">Gents</button>
+        <button class="pill" data-category="Kids">Kids</button>
+        <button class="pill" data-category="Beauty">Beauty</button>
+        <button class="pill" data-category="Shoes">Shoes</button>
+      </div>
+      <div class="filter-row">
+        <input id="productSearch" type="search" placeholder="Search products or fabrics..." aria-label="Search products">
+        <select id="fabricFilter" aria-label="Filter by fabric">
+          <option value="all">All Fabrics</option>
+          <option value="Lawn">Lawn</option>
+          <option value="Cotton">Cotton</option>
+          <option value="Khaddar">Khaddar</option>
+          <option value="Linen">Linen</option>
+          <option value="Silk">Silk</option>
+          <option value="Wash & Wear">Wash & Wear</option>
+        </select>
+        <select id="priceFilter" aria-label="Filter by price">
+          <option value="all">All Prices</option>
+          <option value="4000">Rs. 4,000 and above</option>
+          <option value="5000">Rs. 5,000 and above</option>
+          <option value="10000">Rs. 10,000 and above</option>
+        </select>
+        <select id="sortFilter" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="fine-print">Demo catalogue and prices. Confirm product ownership, stock, prices and image rights before accepting real orders.</p>
+    </section>
+
+    <section class="concierge-section">
+      <div class="concierge-image"></div>
+      <div class="concierge-content">
+        <span class="eyebrow">YOUR PERSONAL SHOPPING ASSISTANT</span>
+        <h2>Tell us what<br>you're <em>looking for.</em></h2>
+        <p>Try: “I need a lawn suit for Eid under 5000” or “Find cotton products for ladies.”</p>
+        <form id="conciergeForm" class="concierge-form">
+          <input id="conciergeInput" placeholder="Describe what you have in mind..." required>
+          <button class="btn btn-gold" type="submit">Find for me ↗</button>
+        </form>
+        <p id="conciergeMessage" class="form-message" aria-live="polite"></p>
+        <span class="fine-print">This demo assistant matches your request against sample catalogue data; it is not a live AI model.</span>
+      </div>
+    </section>
+
+    <section class="section" id="dining">
+      <div class="section-heading">
+        <div><span class="eyebrow">A TASTE OF SOMETHING SPECIAL</span><h2>Dining <em>& delights.</em></h2></div>
+        <p>Take a pause, share a meal and discover your next favourite table.</p>
+      </div>
+      <div class="experience-grid">
+        <article class="experience-card dining-card">
+          <div class="experience-image"></div>
+          <div class="experience-body"><span class="eyebrow">FOOD & DRINK</span><h3>The Food Court</h3><p>Explore a sample selection of cafés, restaurants and quick bites.</p><button class="btn btn-dark" data-booking="table">Request a Table</button></div>
+        </article>
+        <article class="experience-card cinema-card" id="entertainment">
+          <div class="experience-image"></div>
+          <div class="experience-body"><span class="eyebrow">LIGHTS. CAMERA. EXPERIENCE.</span><h3>The Cinema</h3><p>Plan a movie night and request tickets for your preferred show.</p><button class="btn btn-dark" data-booking="cinema">Book Cinema Tickets</button></div>
+        </article>
+      </div>
+      <p class="fine-print">Booking buttons submit demo requests only. Connect a real venue or ticketing service to confirm reservations.</p>
+    </section>
+
+    <section class="section offers-section" id="offers">
+      <div class="section-heading">
+        <div><span class="eyebrow">A LITTLE SOMETHING EXTRA</span><h2>Offers worth <em>discovering.</em></h2></div>
+        <p>Sample promotions to demonstrate the offers section.</p>
+      </div>
+      <div class="offer-grid">
+        <article class="offer-card offer-one"><span>FASHION EDIT</span><h3>Seasonal<br>Style Days</h3><p>Explore selected fashion offers.</p><a href="#explore">Shop the edit ↗</a></article>
+        <article class="offer-card offer-two"><span>MEMBERS ONLY</span><h3>Your VIP<br>Privileges</h3><p>Discover exclusive member experiences.</p><button data-vip-open>Explore membership ↗</button></article>
+        <article class="offer-card offer-three"><span>WEEKEND PLANS</span><h3>Make a day<br>of it.</h3><p>Pair shopping with dining and entertainment.</p><a href="#dining">Plan your visit ↗</a></article>
+      </div>
+    </section>
+
+    <section class="section vip-section">
+      <div><span class="eyebrow">THE GRAND CIRCLE</span><h2>Exceptional access.<br><em>Personal rewards.</em></h2><p>Join our demo VIP programme for member points, private-sale previews and special updates.</p><button class="btn btn-gold" id="vipJoin">Join the VIP Circle</button></div>
+      <div class="vip-perks"><div><span>01</span><p>Earn reward points on eligible purchases.</p></div><div><span>02</span><p>Get notified about exclusive offers.</p></div><div><span>03</span><p>Discover members-only experiences.</p></div></div>
+    </section>
+
+    <section class="section parking-section">
+      <div class="parking-copy"><span class="eyebrow">ARRIVE IN COMFORT</span><h2>We saved you<br><em>a little time.</em></h2><p>Request a parking or valet service slot before your visit.</p><button class="btn btn-dark" data-booking="parking">Request Parking / Valet</button></div>
+      <div class="parking-visual"><div class="parking-circle">P<span>VALET</span></div></div>
+    </section>
+
+    <section class="section review-section" id="reviews">
+      <div class="section-heading"><div><span class="eyebrow">KIND WORDS</span><h2>Experiences that <em>stay with you.</em></h2></div><button class="btn btn-outline-dark" id="reviewOpen">Write a Review</button></div>
+      <div id="reviewGrid" class="review-grid"></div>
+      <p class="fine-print">Sample display cards are marked as demo content. Submitted reviews are stored in this browser only until a backend is connected.</p>
+    </section>
+
+    <section class="newsletter-section">
+      <span class="eyebrow">THE GRAND LETTER</span><h2>A little luxury, <em>in your inbox.</em></h2>
+      <p>Sign up for news, events and exclusive offer announcements.</p>
+      <form id="newsletterForm" class="newsletter-form"><input type="email" placeholder="Your email address" required><button class="btn btn-gold">Subscribe ↗</button></form>
+      <p id="newsletterMessage" class="form-message" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-main">
+      <div class="footer-brand"><a class="logo" href="#home">THE <span>GRAND</span><small>LUXURY DESTINATION</small></a><p>A concept website for a modern shopping, dining and entertainment destination.</p></div>
+      <div><h4>EXPLORE</h4><a href="#directory">Store Directory</a><a href="#floor-map">Floor Map</a><a href="#explore">Shopping</a><a href="#offers">Offers & Events</a></div>
+      <div><h4>EXPERIENCES</h4><a href="#dining">Dining</a><a href="#entertainment">Cinema</a><a href="#reviews">Reviews</a><button class="footer-link" data-booking="parking">Parking / Valet</button></div>
+      <div><h4>GET IN TOUCH</h4><a id="footerWhatsApp" href="#" target="_blank" rel="noopener">WhatsApp</a><a id="footerEmail" href="#">Email Us</a><a href="#contact">Mall Location</a><p class="small-text">Replace demo contact details with the client's verified information.</p></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> THE GRAND. Website concept demo.</span><span>Privacy · Terms · Accessibility</span></div>
+  </footer>
+
+  <a id="floatingWhatsApp" class="whatsapp-float" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">✆ <span>Chat with us</span></a>
+
+  <!-- Shopping cart -->
+  <div class="overlay" id="cartOverlay"></div>
+  <aside class="side-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="drawer-header"><h2>Your Bag</h2><button class="close-button" id="cartClose" aria-label="Close cart">✕</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-summary"><div><span>Subtotal</span><strong id="cartTotal">Rs. 0</strong></div><button class="btn btn-gold full-width" id="checkoutButton">Continue to Order</button><p class="fine-print">Demo checkout sends an order request through WhatsApp.</p></div>
+  </aside>
+
+  <!-- Reusable modal -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="drawer-header"><h2 id="modalTitle">Request</h2><button class="close-button" id="modalClose" aria-label="Close dialog">✕</button></div>
+      <div id="modalContent"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+  </html>
+          
